@@ -1,4 +1,3 @@
-
 import json
 
 def get_data():
@@ -36,9 +35,26 @@ def display_city_count(PerCity):
         print(item)
 
 
+def get_rest(data):
+    Japan_rest = []
+    for rest in data:
+        if(rest['Country'] == "Japan"):
+            Japan_rest.append(rest)
+    return Japan_rest
+
+
+def display_japan(data):
+    for rest in data:
+        print(rest)
+
 
 data = get_data()
+
 country_count = get_count(data)
 display_count(country_count)
+
 PerCity = get_city_count(data)
 display_city_count(PerCity)
+
+japan_res = get_rest(data)
+display_japan(japan_res)
